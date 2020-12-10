@@ -1,5 +1,14 @@
 #!/bin/bash
 
+###
+# Author: Jakub Partyka
+# Purpose: Iterates over haproxy logs. Counts rate of responses matching regex in selected time range
+#
+# accepted log format:
+# Nov 28 00:00:00 [info] haproxy[17]: 192.168.144.0:33534 [27/Nov/2020:23:59:59.761] component_name BACKEND/SERVER 0/0/108/128/239 200 2432 - - ---- 5/5/0/0/0 0/0 "POST /http/request/path"
+#
+###
+
 ### CONFIG ###
 RATE_TIME_RANGE=2             #0 - SECOND / 1 - 10 SECONDS / 2 - MINUTE / 3 - 10 MINUTES / 4 - HOUR
 
