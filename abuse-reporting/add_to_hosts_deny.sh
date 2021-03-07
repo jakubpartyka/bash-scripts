@@ -22,7 +22,7 @@ done
 
 # put IPs to temporary file
 for file in $@ ; do
-	cat "$file" | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> "$TMP_FILE"
+	cat "$file" | grep -v "0.0.0.0" | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" >> "$TMP_FILE"
 done
 
 # sort and pick unique addresses
